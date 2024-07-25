@@ -1,10 +1,16 @@
 package calculator;
+
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //배열 생성
+        int[] save = new int[10];
+        //count 값 초기화
+        int count =0;
+
         //while문 사용하여 계산기 반복
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -21,7 +27,7 @@ public class App {
             char operator = sc.next().charAt(0);
 
             //result 값 초기화
-            int result=0;
+            int result = 0;
 
             //swich문 사용해 연산 기호 구분하여 출력
             switch (operator) {
@@ -64,10 +70,21 @@ public class App {
             sc.nextLine();
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
+            //exit 입력시 프로그램 종료
             if (exit.equals("exit")) {
                 break;
             }
 
+            //결과 값을 save 배열에 저장, 저장 할때마다 count 값을 1 증가
+            save[count]=result;
+            count++;
+
+
+
+
+
         }
+
+
     }
 }
