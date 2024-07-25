@@ -21,7 +21,7 @@ public class App {
             char operator = sc.next().charAt(0);
 
             //result 값 초기화
-            int result = 0;
+            int result;
 
             //swich문 사용해 연산 기호 구분하여 출력
             switch (operator) {
