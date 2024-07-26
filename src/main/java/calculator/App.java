@@ -79,6 +79,14 @@ public class App {
             if (remove.equals("remove")) {
                 save.remove(0);
             }
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String inquiry = sc.nextLine();
+            if (inquiry.equals("inquiry")) {
+                for(int save_res : save){
+                    System.out.println(save_res);
+                }
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
             //exit 입력시 프로그램 종료
