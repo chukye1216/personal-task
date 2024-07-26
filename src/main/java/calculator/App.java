@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,9 +9,9 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //배열 생성
-        int[] save = new int[10];
+        ArrayList<Integer> save = new ArrayList<>();
         //count 값 초기화
-        int count =0;
+        int count = 0;
 
         //while문 사용하여 계산기 반복
         while (true) {
@@ -68,7 +69,16 @@ public class App {
 
 
             }
+            //리스트에 결과값 저장
+            save.add(result);
             sc.nextLine();
+
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String remove = sc.nextLine();
+            //remove를 받으면 가장 먼저 입력받은 연산결과 삭제
+            if (remove.equals("remove")) {
+                save.remove(0);
+            }
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
             //exit 입력시 프로그램 종료
@@ -76,29 +86,7 @@ public class App {
                 break;
             }
 
-            //배열이 비어있으면 결과 값을 save 배열에 저장, 저장 할때마다 count 값을 1 증가
-            if (count < save.length){
-                save[count]=result;
-                count++;
-            } else {
-                //배열을 한칸씩 앞으로 이동
-                for(int i = 1; i < save.length; i++){
-                    save[i-1] = save[i];
-                }
-                //새로운 결과 값이 마지막에 저장
-                save[save.length-1] = result;
-            }
-
-
-
-
-
-
-
-
 
         }
-
-
     }
 }
