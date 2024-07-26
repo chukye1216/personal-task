@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -75,9 +76,22 @@ public class App {
                 break;
             }
 
-            //결과 값을 save 배열에 저장, 저장 할때마다 count 값을 1 증가
-            save[count]=result;
-            count++;
+            //배열이 비어있으면 결과 값을 save 배열에 저장, 저장 할때마다 count 값을 1 증가
+            if (count < save.length){
+                save[count]=result;
+                count++;
+            } else {
+                //배열을 한칸씩 앞으로 이동
+                for(int i = 1; i < save.length; i++){
+                    save[i-1] = save[i];
+                }
+                //새로운 결과 값이 마지막에 저장
+                save[save.length-1] = result;
+            }
+
+
+
+
 
 
 
