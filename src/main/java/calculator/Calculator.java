@@ -1,9 +1,13 @@
 package calculator;
 
+import java.util.AbstractList;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> saveArray = new ArrayList<>();
+    /**
+     * App 클래스의 main 메서드에서 Calculator 클래스의 연산 결과를 저장하고 있는 컬렉션 필드에 직접 접근하지 못하도록 수정
+     */
+    private ArrayList<Integer> saveArray = new ArrayList<>();
 
     public int calculate(int num1, int num2, char operator) throws CalcException {
         int result = 0;
@@ -63,6 +67,22 @@ public class Calculator {
             for (int saveArray_res : saveArray) {
                 System.out.println(saveArray_res);
             }
+    }
 
+    /**
+     * 간접 접근을 통해 필드에 접근하여 가져올 수 있도록 구현합니다. (Getter 메서드)
+     * @return
+     */
+    public ArrayList<Integer> getSaveArray(){
+        return saveArray;
+    }
+
+    /**
+     * 간접 접근을 통해 필드에 접근하여 수정할 수 있도록 구현합니다. (Setter 메서드)
+     * @param saveArray
+     */
+    public void setSaveArray(ArrayList<Integer> saveArray){
+        this.saveArray = new ArrayList<>();
     }
 }
+
