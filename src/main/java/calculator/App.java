@@ -37,7 +37,7 @@ public class App {
 
             //remove를 받으면 가장 먼저 입력받은 연산결과 삭제
             if (remove.equals("remove")) {
-                calc.remove();
+                calc.removeResult();
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");

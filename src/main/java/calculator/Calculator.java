@@ -56,7 +56,7 @@ public class Calculator {
     /**
      * remove를 받으면 가장 먼저 입력받은 연산결과 삭제
      */
-    public void remove() {
+    public void removeResult() {
             saveArray.remove(0);
     }
 
@@ -79,7 +79,7 @@ public class Calculator {
 
     /**
      * 간접 접근을 통해 필드에 접근하여 수정할 수 있도록 구현합니다. (Setter 메서드)
-     * @param saveArray
+     * @param
      */
     public void setSaveArray(ArrayList<Integer> saveArray){
         this.saveArray = new ArrayList<>();
