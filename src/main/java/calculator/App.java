@@ -7,12 +7,15 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calc = new Calculator();
+//        Calculator calc = new Calculator();
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
 
         //while문 사용하여 계산기 반복
         while (true) {
             System.out.println("사칙연산/원의 넓이 중 어떤 것을 구하시겠습니까?(calc/circle)");
             String Choice = sc.nextLine();
+
             if (Choice.equals("calc")) {
                 System.out.println("첫 번째 숫자를 입력하세요: ");
 
@@ -29,7 +32,7 @@ public class App {
 
                 //Calculator에서 연산 수행 후 저장
                 try {
-                    int result = calc.calculate(num1, num2, operator);
+                    int result = arithmeticCalculator.calculate(num1, num2, operator);
                 } catch (CalcException e) {
                     System.out.println(e.getMessage());
                 }
@@ -42,7 +45,7 @@ public class App {
 
                 //remove를 받으면 가장 먼저 입력받은 연산결과 삭제
                 if (remove.equals("remove")) {
-                    calc.removeResult();
+                    arithmeticCalculator.removeResult();
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
@@ -50,13 +53,13 @@ public class App {
 
                 //inquiry를 받으면 저장된 연산결과 조회
                 if (inquiry.equals("inquiry")) {
-                    calc.inquiryResults();
+                    arithmeticCalculator.inquiryResults();
                 }
 
             } else if (Choice.equals("circle")) {
                 System.out.println("원의 반지름을 입력해주세요 :");
                 double radius = sc.nextDouble();
-                double answer = calc.calculateCircleArea(radius);
+                double answer = circleCalculator.calculateCircleArea(radius);
 
                 sc.nextLine();
 
@@ -64,7 +67,7 @@ public class App {
                 String CircleInquiry = sc.nextLine();
 
                 if (CircleInquiry.equals("CircleInquiry")) {
-                    calc.circleInquiry();
+                    circleCalculator.circleInquiry();
                 }
 
             }
