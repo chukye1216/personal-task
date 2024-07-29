@@ -44,7 +44,7 @@ public class App {
             String inquiry = sc.nextLine();
             //inquiry를 받으면 저장된 연산결과 조회
             if (inquiry.equals("inquiry")) {
-                calc.inquiry();
+                calc.inquiryResults();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");

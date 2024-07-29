@@ -63,7 +63,7 @@ public class Calculator {
     /**
      * inquiry를 입력받으면 저장된 연산 결과 조회
      */
-    public void inquiry() {
+    public void inquiryResults() {
             for (int saveArray_res : saveArray) {
                 System.out.println(saveArray_res);
             }
