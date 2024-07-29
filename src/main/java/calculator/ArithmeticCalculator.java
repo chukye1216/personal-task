@@ -3,39 +3,39 @@ package calculator;
 import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculator{
+    private AddOperator add = new AddOperator();
+    private SubtractOperator sub = new SubtractOperator();
+    private MultiplyOperator mul = new MultiplyOperator();
+    private DivideOperator div = new DivideOperator();
 
     private ArrayList<Double> saveArray = new ArrayList<>();
 
-    public int calculate(int num1, int num2, char operator) throws CalcException {
+    public int calculate(double num1, double num2, char operator) throws CalcException {
         int result = 0;
         switch (operator) {
             case '+':
 
-                result = num1 + num2;
+                result = (int) add.operate(num1, num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '-':
-                result = num1 - num2;
+                result = (int) sub.operate(num1, num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '*':
-                result = num1 * num2;
+                result = (int) mul.operate(num1, num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '/':
-                //if문 사용하여 num2에 0이 오는 경우 해당 연산오류 내용 출력
-                if (num2 == 0) {
-                    throw new CalcException("분모는 0으로 나눌 수 없습니다");
-                } else {
-                    result = num1 / num2;
+                    result = (int) div.operate(num1, num2);
                     System.out.println("결과: " + result);
-                }
+
                 break;
 
 

@@ -20,19 +20,19 @@ public class App {
                 System.out.println("첫 번째 숫자를 입력하세요: ");
 
                 // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-                int num1 = sc.nextInt();
+                double num1 = sc.nextDouble();
 
                 System.out.println("두 번째 숫자를 입력하세요: ");
 
                 // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-                int num2 = sc.nextInt();
+                double num2 = sc.nextDouble();
 
                 System.out.println("사칙연산 기호를 입력하세요: "); // +, -, *, /
                 char operator = sc.next().charAt(0);
 
                 //Calculator에서 연산 수행 후 저장
                 try {
-                    int result = arithmeticCalculator.calculate(num1, num2, operator);
+                    double result = arithmeticCalculator.calculate(num1, num2, operator);
                 } catch (CalcException e) {
                     System.out.println(e.getMessage());
                 }
