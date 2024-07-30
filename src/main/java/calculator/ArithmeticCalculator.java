@@ -12,36 +12,31 @@ public class ArithmeticCalculator extends Calculator {
 
             case '+':
                 operation = new AddOperator();
-                result = operation.operate((int) num1, (int) num2);
-                System.out.println("결과: " + result);
+
                 break;
 
 
             case '-':
                 operation = new SubtractOperator();
-                result = operation.operate((int) num1, (int) num2);
-                System.out.println("결과: " + result);
+
                 break;
 
 
             case '*':
                 operation = new MultiplyOperator();
-                result = operation.operate((int) num1, (int) num2);
-                System.out.println("결과: " + result);
+
                 break;
 
 
             case '/':
                 operation = new DivideOperator();
-                result = operation.operate((int) num1, (int) num2);
-                System.out.println("결과: " + result);
+
                 break;
 
 
             case '%':
                 operation = new ModOperator();
-                result = operation.operate((int) num1, (int) num2);
-                System.out.println("결과: " + result);
+
                 break;
 
 
@@ -50,6 +45,8 @@ public class ArithmeticCalculator extends Calculator {
 
 
         }
+        result = operation.operate((int) num1, (int) num2);
+        System.out.println("결과: " + result);
         //리스트에 결과값 저장
         saveArray.add((double) result);
         return (int) result;

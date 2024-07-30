@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Calculator {
     // 한번 입력된 반지름 값은 변하지 않음 -> static
     static double radius;
+
     //파이 값은 절대로 변하지 않을 상수. -> final static
     final static double PI = 3.14;
     private ArrayList<Double> saveArray = new ArrayList<>();
