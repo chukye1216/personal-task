@@ -27,7 +27,7 @@ public class App {
                 // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
                 double num2 = sc.nextDouble();
 
-                System.out.println("사칙연산 기호를 입력하세요: "); // +, -, *, /
+                System.out.println("사칙연산 기호를 입력하세요: ");
                 char operator = sc.next().charAt(0);
 
                 //Calculator에서 연산 수행 후 저장

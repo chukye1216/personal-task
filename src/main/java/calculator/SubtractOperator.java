@@ -1,7 +1,8 @@
 package calculator;
 
-public class SubtractOperator {
-    public double operate(double num1, double num2) {
+public class SubtractOperator extends AbstractOperation {
+    @Override
+    public double operate(int num1, int num2) throws CalcException {
         return num1 - num2;
     }
 }

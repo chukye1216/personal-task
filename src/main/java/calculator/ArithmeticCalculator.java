@@ -2,40 +2,46 @@ package calculator;
 
 import java.util.ArrayList;
 
-public class ArithmeticCalculator extends Calculator{
-    private AddOperator add = new AddOperator();
-    private SubtractOperator sub = new SubtractOperator();
-    private MultiplyOperator mul = new MultiplyOperator();
-    private DivideOperator div = new DivideOperator();
-
+public class ArithmeticCalculator extends Calculator {
     private ArrayList<Double> saveArray = new ArrayList<>();
 
     public int calculate(double num1, double num2, char operator) throws CalcException {
-        int result = 0;
+        AbstractOperation operation;
+        double result = 0;
         switch (operator) {
             case '+':
 
-                result = (int) add.operate(num1, num2);
+//                result = (int) add.operate(num1, num2);
+                operation = new AddOperator();
+                result = operation.operate((int) num1, (int) num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '-':
-                result = (int) sub.operate(num1, num2);
+                operation = new SubtractOperator();
+                result = operation.operate((int) num1, (int) num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '*':
-                result = (int) mul.operate(num1, num2);
+                operation = new MultiplyOperator();
+                result = operation.operate((int) num1, (int) num2);
                 System.out.println("결과: " + result);
                 break;
 
 
             case '/':
-                    result = (int) div.operate(num1, num2);
-                    System.out.println("결과: " + result);
+                operation = new DivideOperator();
+                result = operation.operate((int) num1, (int) num2);
+                System.out.println("결과: " + result);
+                break;
 
+            case '%':
+                operation = new ModOperator();
+                result = operation.operate((int) num1, (int) num2);
+                System.out.println("결과: " + result);
                 break;
 
 
@@ -46,7 +52,7 @@ public class ArithmeticCalculator extends Calculator{
         }
         //리스트에 결과값 저장
         saveArray.add((double) result);
-        return result;
+        return (int) result;
     }
 
     /**

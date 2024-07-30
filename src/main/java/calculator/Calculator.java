@@ -18,6 +18,7 @@ public class Calculator {
         //생성자로 리스트 초기화
         this.saveArray = new ArrayList<>();
         this.CircleArray = new ArrayList<>();
+
     }
     /**
      * 간접 접근을 통해 필드에 접근하여 가져올 수 있도록 구현합니다. (Getter 메서드)
