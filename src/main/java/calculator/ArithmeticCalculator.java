@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculator {
     private ArrayList<Double> saveArray = new ArrayList<>();
+    private AbstractOperation operation;
 
     public int calculate(double num1, double num2, char operator) throws CalcException {
-        AbstractOperation operation;
         double result = 0;
         switch (operator) {
-            case '+':
 
-//                result = (int) add.operate(num1, num2);
+            case '+':
                 operation = new AddOperator();
                 result = operation.operate((int) num1, (int) num2);
                 System.out.println("결과: " + result);
@@ -37,6 +36,7 @@ public class ArithmeticCalculator extends Calculator {
                 result = operation.operate((int) num1, (int) num2);
                 System.out.println("결과: " + result);
                 break;
+
 
             case '%':
                 operation = new ModOperator();
